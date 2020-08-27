@@ -1,5 +1,10 @@
 @import "~bootstrap/dist/css/bootstrap-grid.min";
 
+:root {
+  --color-header: rgb(49, 49, 49);
+  --color-text: rgb(97, 115, 121);
+}
+
 html,
 body {
   height: 100%;
@@ -8,8 +13,34 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-header);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-text);
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  padding-bottom: 16px;
 }
 
 section {
   padding: 20px 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }

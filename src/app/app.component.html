@@ -10,7 +10,12 @@
 
 <div class="container">
   <section id="home">
-    <h1>Home</h1>
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">Home</h1>
+        <hr />
+      </div>
+    </div>
     <div
       *ngFor="let item of (imageData$ | async)?.collection.items"
       class="image-container"
@@ -20,10 +25,11 @@
       </div>
     </div>
   </section>
-  <section id="contact">
+  <section id="contact" class="container">
     <div class="row">
       <div class="col-12">
-        <h1>Contact</h1>
+        <h1 class="text-center">Contact</h1>
+        <hr />
       </div>
     </div>
 
@@ -42,12 +48,12 @@
       </div>
       <div class="contact col-12 order-1 col-xl-5 order-xl-2">
         <div class="row">
-          <div class="col-3"><strong>Address:</strong></div>
-          <div class="col-9">3501 Kennedy Rd, Janesville, WI 53545</div>
-        </div>
-        <div class="row">
-          <div class="col-3"><strong>Phone:</strong></div>
-          <div class="col-9">(608) 758-1111</div>
+          <div class="col-4 col-xl-2"><strong>Address:</strong></div>
+          <div class="col-8 col-xl-4">
+            3501 Kennedy Rd, Janesville, WI 53545
+          </div>
+          <div class="col-4 col-xl-2"><strong>Phone:</strong></div>
+          <div class="col-8 col-xl-4">(608) 758-1111</div>
         </div>
         <div class="row"><div class="col">&nbsp;</div></div>
         <div class="row">
