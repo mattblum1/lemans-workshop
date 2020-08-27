@@ -8,10 +8,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'lemans-workshop';
   imageData$: Observable<ImageData>;
   imageUrls$: Observable<string[]>;
+
+  title = 'lemans-workshop';
   imageUrls: string[];
+  name;
+  location: string;
+  reason: string;
+  message: string;
 
   constructor(private dataService: DataService) {
     this.imageData$ = this.dataService.getImageData();
@@ -25,7 +30,7 @@ export class AppComponent {
     console.warn('imageUrls$', this.imageUrls$);
   }
 
-  // getItemImageUrl(data) {
-
-  // }
+  submitMessage() {
+    console.warn('TODO: submitMessage');
+  }
 }
