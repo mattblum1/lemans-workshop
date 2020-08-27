@@ -28,6 +28,27 @@ mat-toolbar-row {
   width: 100%;
 }
 
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+
+  iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+.map-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .image-container {
   display: inline-block;
   width: 25%;
@@ -46,6 +67,11 @@ mat-toolbar-row {
 }
 
 @media (max-width: $xl) {
+  .contact,
+  .map {
+    padding: 20px 0;
+  }
+
   .image-container {
     img {
       max-height: 134px;
