@@ -60,7 +60,17 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Name" value="Name" />
+              <input matInput placeholder="John Doe" [(ngModel)]="name" />
+              <button
+                mat-button
+                *ngIf="name"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="name = ''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
         </div>
@@ -68,7 +78,17 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-label>Location</mat-label>
-              <input matInput placeholder="Location" value="Location" />
+              <input matInput [(ngModel)]="location" />
+              <button
+                mat-button
+                *ngIf="location"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="location = ''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
         </div>
@@ -76,7 +96,17 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-label>Reason</mat-label>
-              <input matInput placeholder="Reason" value="Reason" />
+              <input matInput [(ngModel)]="reason" />
+              <button
+                mat-button
+                *ngIf="reason"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="reason = ''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
         </div>
@@ -84,7 +114,17 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-label>Message</mat-label>
-              <input matInput placeholder="Message" value="Message" />
+              <input matInput [(ngModel)]="message" />
+              <button
+                mat-button
+                *ngIf="message"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="message = ''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
             </mat-form-field>
           </div>
         </div>

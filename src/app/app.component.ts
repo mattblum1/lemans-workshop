@@ -13,16 +13,14 @@ export class AppComponent {
 
   title = 'lemans-workshop';
   imageUrls: string[];
-  name;
-  location: string;
-  reason: string;
-  message: string;
+
+  name: string = null;
+  location = '';
+  reason = '';
+  message = '';
 
   constructor(private dataService: DataService) {
     this.imageData$ = this.dataService.getImageData();
-    console.warn('imageData', this.imageData$);
-
-    // this.imageData$.subscribe((c: ImageData) => c.data.forEach(item => this.imageUrls = [ this.dataService.getImageMetaData(item), ... ]));
   }
 
   getImageMetaData(url: string) {
@@ -31,6 +29,9 @@ export class AppComponent {
   }
 
   submitMessage() {
-    console.warn('TODO: submitMessage');
+    console.warn('name', this.name);
+    console.warn('location', this.location);
+    console.warn('reason', this.reason);
+    console.warn('message', this.message);
   }
 }
