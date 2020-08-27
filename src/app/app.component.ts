@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { MatSelectChange } from '@angular/material/select';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,16 +12,21 @@ export class AppComponent {
   imageData$: Observable<ImageData>;
   imageUrls$: Observable<string[]>;
 
-  title = 'lemans-workshop';
-  imageUrls: string[];
+  title = `Lemans' Workshop`;
+  imageUrls: string[] = [];
 
-  name: string = null;
+  name = '';
   location = '';
-  reason = '';
+  reasons: string[] = ['Business', 'Product', 'Jobs'];
+  selectedReason: string = null;
   message = '';
 
   constructor(private dataService: DataService) {
     this.imageData$ = this.dataService.getImageData();
+  }
+
+  doSelectionChange(e: MatSelectChange) {
+    this.selectedReason = e.value;
   }
 
   getImageMetaData(url: string) {
@@ -28,10 +34,10 @@ export class AppComponent {
     console.warn('imageUrls$', this.imageUrls$);
   }
 
-  submitMessage() {
+  submit() {
     console.warn('name', this.name);
     console.warn('location', this.location);
-    console.warn('reason', this.reason);
+    console.warn('reason', this.selectedReason);
     console.warn('message', this.message);
   }
 }
