@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,8 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavbarComponent {
   @Input() isLoggedIn;
+  @Output() isLoggedInEvent = new EventEmitter<boolean>();
 
-  constructor() {
-    console.warn('isLoggedIn', this.isLoggedIn);
+  constructor() {}
+
+  logout() {
+    this.isLoggedInEvent.emit(false);
   }
 }
