@@ -12,8 +12,13 @@ export class AppComponent {
 
   // correctUsername: string = 'Lemans';
   // correctPassword: string = 'AlphaBeta123';
-  correctUsername: string = '1';
-  correctPassword: string = '2';
+  // correctUsername: string[] = ['Lemans', '1'];
+  // correctPassword: string[] = ['AlphaBeta123', '1'];
+
+  credentials: Credentials[] = [
+    { username: 'Lemans', password: 'AlphaBeta123' },
+    { username: 'Matt', password: 'LetMeIn1' },
+  ];
 
   isLoggedIn: boolean = false;
 
@@ -28,16 +33,20 @@ export class AppComponent {
   }
 
   submit() {
-    if (
-      this.username === this.correctUsername &&
-      this.password === this.correctPassword
-    ) {
+    const currentCredentials = this.credentials.find(
+      (c) => c.username === this.username
+    );
+
+    if (currentCredentials.password === this.password) {
       this.isLoggedIn = true;
-      console.warn('isLoggedIn', this.isLoggedIn);
       this.router.navigateByUrl('/home');
     } else {
       this.isLoggedIn = false;
-      console.warn('isLoggedIn', this.isLoggedIn);
     }
   }
+}
+
+interface Credentials {
+  username: string;
+  password: string;
 }
