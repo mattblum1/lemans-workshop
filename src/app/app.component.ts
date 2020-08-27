@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/services/data.service';
-import { MatSelectChange } from '@angular/material/select';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +10,24 @@ export class AppComponent {
   username: string = '';
   password: string = '';
 
-  constructor() {}
+  correctUsername: string = 'Lemans';
+  correctPassword: string = 'AlphaBeta123';
+
+  isLoggedIn: boolean = false;
+
+  constructor(private router: Router) {}
+
+  submit() {
+    if (
+      this.username === this.correctUsername &&
+      this.password === this.correctPassword
+    ) {
+      this.isLoggedIn = true;
+      console.warn('isLoggedIn', this.isLoggedIn);
+      this.router.navigateByUrl('/home');
+    } else {
+      this.isLoggedIn = false;
+      console.warn('isLoggedIn', this.isLoggedIn);
+    }
+  }
 }

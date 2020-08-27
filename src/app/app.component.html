@@ -1,6 +1,7 @@
-<app-navbar></app-navbar>
+<app-navbar [isLoggedIn]="isLoggedIn"></app-navbar>
 
 <section id="login">
+  <!-- *ngIf="!isLoggedIn" -->
   <div class="row">
     <div class="col-12">
       <h1 class="text-center">Login</h1>
@@ -20,6 +21,7 @@
             placeholder="JohnDoe3456"
             type="text"
             required
+            value="Lemans"
           />
           <button
             mat-button
@@ -46,6 +48,7 @@
             placeholder="***********"
             type="password"
             required
+            value="AlphaBeta123"
           />
           <button
             mat-button
@@ -62,11 +65,13 @@
     </div>
 
     <div class="row">
-      <div class="offset-md-4 col-4 text-right">
+      <div class="offset-md-4 col-4">
         <button
           mat-raised-button
+          class="full-width"
           color="primary"
           [disabled]="!username || !password"
+          (click)="submit()"
         >
           Submit
         </button>
