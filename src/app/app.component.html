@@ -21,7 +21,12 @@
       class="image-container"
     >
       <div *ngFor="let link of item.links">
-        <img [src]="link.href" *ngIf="link.render === 'image'" />
+        <div class="image-wrapper" *ngIf="link.render === 'image'">
+          <a [href]="link.href" target="_blank">
+            <img [src]="link.href" />
+          </a>
+        </div>
+        <!-- <div>{{ link | json }}</div> -->
       </div>
     </div>
   </section>
