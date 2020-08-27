@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DataService } from 'src/services/data.service';
+import { DataService } from 'src/app/services/data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,12 @@ import { DataService } from 'src/services/data.service';
 })
 export class AppComponent {
   title = 'lemans-workshop';
+  imageData$: Observable<ImageData>;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+    this.imageData$ = this.dataService.getImageData();
+    console.warn('imageData', this.imageData$);
+
+    this.imageData$.subscribe((d) => console.warn('d', d));
+  }
 }
