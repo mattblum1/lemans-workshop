@@ -1,7 +1,78 @@
 <app-navbar></app-navbar>
 
-<div class="container">
-  <router-outlet></router-outlet>
-  <!-- <app-home></app-home>
-  <app-contact></app-contact> -->
-</div>
+<section id="login">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">Login</h1>
+      <hr />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="offset-md-4 col-4">
+        <mat-form-field class="full-width">
+          <mat-label>Username</mat-label>
+          <input
+            name="username"
+            [(ngModel)]="username"
+            matInput
+            placeholder="JohnDoe3456"
+            type="text"
+            required
+          />
+          <button
+            mat-button
+            *ngIf="username"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="username = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="offset-md-4 col-4">
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input
+            name="password"
+            [(ngModel)]="password"
+            matInput
+            placeholder="***********"
+            type="password"
+            required
+          />
+          <button
+            mat-button
+            *ngIf="password"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="password = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="offset-md-4 col-4 text-right">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!username || !password"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</section>
