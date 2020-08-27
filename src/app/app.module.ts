@@ -1,4 +1,5 @@
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ContactComponent } from './components/contact/contact.component';
@@ -25,6 +26,7 @@ import { NgModule } from '@angular/core';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     MatButtonModule,
