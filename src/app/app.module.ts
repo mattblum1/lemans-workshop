@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { NgModule } from '@angular/core';
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],

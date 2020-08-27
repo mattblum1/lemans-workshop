@@ -1,0 +1,25 @@
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 14px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.image-container {
+  display: inline-block;
+  width: 25%;
+
+  img {
+    max-height: 159px;
+    padding: 4px;
+    width: 100%;
+  }
+}
