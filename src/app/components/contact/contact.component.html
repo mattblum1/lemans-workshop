@@ -1,0 +1,125 @@
+<section id="contact" class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">Contact</h1>
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="map col-12 order-2 col-xl-6 order-xl-1">
+      <div class="map-responsive">
+        <iframe
+          src="https://maps.google.com/maps?q=3501%20Kennedy%20Rd%2C%20Janesville%2C%20WI%2053545&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="600"
+          height="450"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="contact col-12 order-1 col-xl-6 order-xl-2">
+      <div class="row">
+        <div class="col-4 col-xl-2"><strong>Address:</strong></div>
+        <div class="col-8 col-xl-4">3501 Kennedy Rd, Janesville, WI 53545</div>
+        <div class="col-4 col-xl-2"><strong>Phone:</strong></div>
+        <div class="col-8 col-xl-4">(608) 758-1111</div>
+      </div>
+      <div class="row"><div class="col">&nbsp;</div></div>
+      <form #contactForm="ngForm">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Name</mat-label>
+              <input
+                name="name"
+                [(ngModel)]="name"
+                matInput
+                placeholder="John Doe"
+                type="text"
+                required
+              />
+              <button
+                mat-button
+                *ngIf="name"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="name = ''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Location</mat-label>
+              <input
+                name="location"
+                matInput
+                [(ngModel)]="location"
+                type="text"
+              />
+              <button
+                mat-button
+                *ngIf="location"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="location = ''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Reason</mat-label>
+              <mat-select
+                (selectionChange)="doSelectionChange($event)"
+                required
+              >
+                <mat-option *ngFor="let reason of reasons" [value]="reason">
+                  {{ reason }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Message</mat-label>
+              <textarea
+                name="message"
+                matInput
+                [(ngModel)]="message"
+                type="text"
+                required
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button
+              mat-raised-button
+              (click)="submit()"
+              color="primary"
+              [disabled]="!contactForm.valid || !selectedReason"
+            >
+              Submit
+            </button>
+            <!-- Form: {{ contactForm.value | json }}<br /><br />
+              Valid: {{ contactForm.valid | json }}<br /><br /> -->
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

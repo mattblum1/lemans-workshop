@@ -1,0 +1,18 @@
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+
+  a {
+    border-right: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 14px;
+    padding-right: 14px;
+
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+      border: none;
+    }
+  }
+}

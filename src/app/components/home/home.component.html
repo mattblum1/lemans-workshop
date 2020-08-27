@@ -1,0 +1,20 @@
+<section id="home">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">Home</h1>
+      <hr />
+    </div>
+  </div>
+  <div
+    *ngFor="let item of (imageData$ | async)?.collection.items"
+    class="image-container"
+  >
+    <div *ngFor="let link of item.links">
+      <div class="image-wrapper" *ngIf="link.render === 'image'">
+        <a [href]="link.href" target="_blank">
+          <img [src]="link.href" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
